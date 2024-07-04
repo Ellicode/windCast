@@ -485,6 +485,7 @@ input:where([type="checkbox"][role="switch"]):checked {
     display: flex;
     flex-direction: column;
     border-radius: 2rem;
+    font-size: 0.9rem;
 }
 .text-muted {
     color: var(--tertiary);
