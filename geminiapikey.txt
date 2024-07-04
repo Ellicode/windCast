@@ -1,0 +1,60 @@
+AIzaSyC_7p1UvbAjOqy2MuPKh_0q_nk4XIkDfNw
+
+new Widget(
+        "<div class='widget-content'>Weather Widget</div>",
+        [/weather/i, /we/i, /forecast/i],
+        "300px",
+        (widgetItem) => `
+            // Example script that runs when the widget is loaded
+            console.log("Weather widget loaded");
+            widgetItem.addEventListener("click", () => {
+                alert("Weather widget clicked");
+            });
+        `
+    ),
+    new Widget(
+        `<div style="padding:20px; display:flex; align-items:center;">
+            <div style="flex:1; overflow:hidden; margin-right:5px;">
+            <p id="query" style="font-size:0.8rem;color:var(--tertiary); margin-top:0; margin-bottom:5px; width:260px !important; white-space: nowrap;"></p>
+            <span id="result" style="font-size:2rem; font-weight:bold; width:260px !important; white-space: nowrap; "></span>
+            </div>
+            <button class="btn-icon" id="copy">
+            <i data-feather="copy" class="icon" id="icon-copy"></i>
+            <i data-feather="check" class="hidden icon" id="icon-check"></i>
+            </button>
+        </div>`,
+        [/^(\d+(\.\d+)?\s*[-+*/]\s*)+\d+(\.\d+)?$/],
+        "740px",
+        (query) => `
+        feather.replace()
+        document.getElementById("query").innerText = "${query} ="
+        document.getElementById("result").innerText = eval("${query}");
+
+        document.getElementById("copy").addEventListener("click", async () => {
+            await navigator.clipboard.writeText(eval("${query}"));
+
+            document.getElementById("icon-copy").classList.add("hidden")
+            document.getElementById("icon-check").classList.remove("hidden")
+            setTimeout(() => {
+                document.getElementById("icon-copy").classList.remove("hidden")
+                document.getElementById("icon-check").classList.add("hidden")
+            },2000)
+        })
+        `
+    ),
+
+    
+new Command(
+    "Google search",
+    "Search google.com",
+    (query) => {
+        window.electronAPI.openBrowser(
+            "https://www.google.com/search?q=" + query
+        );
+    },
+    "./assets/extensions/google.png",
+    [],
+    []
+),
+
+

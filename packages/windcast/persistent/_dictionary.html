@@ -1,0 +1,81 @@
+<style>
+    .container {
+        max-width: 600px;
+        margin: auto;
+    }
+    .word {
+        font-size: 2em;
+        margin-bottom: 10px;
+        animation: dictionnary-slide 0.3s cubic-bezier(.5,1.34,.56,1.04);
+        transform: translate(-50px);
+        filter: blur(10px);
+        opacity: 0;
+        animation-fill-mode: forwards;
+
+    }
+    .phonetic {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        animation: dictionnary-slide 0.3s cubic-bezier(.5,1.34,.56,1.04);
+        transform: translate(-50px);
+        filter: blur(10px);
+        opacity: 0;
+        animation-fill-mode: forwards;
+
+        animation-delay: 0.1s;
+    }
+    .meanings {
+        margin-bottom: 20px;
+    }
+    .meaning {
+        margin-bottom: 10px;
+    }
+    .partOfSpeech {
+        font-weight: bold;
+        margin-bottom: 5px;
+        animation: dictionnary-slide 0.3s cubic-bezier(.5,1.34,.56,1.04);
+        transform: translate(-50px);
+        filter: blur(10px);
+        opacity: 0;
+        animation-fill-mode: forwards;
+        animation-delay: 300ms;
+    }
+    .definition {
+        margin-left: 20px;
+        margin-bottom: 5px;
+        animation: dictionnary-slide 0.3s cubic-bezier(.5,1.34,.56,1.04);
+        transform: translate(-50px);
+        filter: blur(10px);
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+    
+    .example {
+        margin-left: 40px;
+        font-style: italic;
+        animation: dictionnary-slide 0.3s cubic-bezier(.5,1.34,.56,1.04);
+        transform: translate(-50px);
+        filter: blur(10px);
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+    .origin{
+        animation: dictionnary-slide 0.3s cubic-bezier(.5,1.34,.56,1.04);
+        transform: translate(-50px);
+        filter: blur(10px);
+        opacity: 0;
+        animation-fill-mode: forwards;
+        animation-delay: 200ms;
+    }
+    @keyframes dictionnary-slide {
+        to {
+            transform: translate(0px);
+            filter: blur(0px);
+            opacity: 1;
+        }
+    }
+</style>
+<div class="padding">
+    <div id="definitionContainer" style="font-family: var(--font-serif); font-size:0.9rem; color:var(--secondary);"></div>
+    <small style="opacity: 0.5;">Data by <a href="https://dictionaryapi.dev/">Free Dictionary API</a></small>
+</div>

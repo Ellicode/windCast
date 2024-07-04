@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/style.css" />
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.7"></script>
+        
+        <title>Document</title>
+    </head>
+    <body>
+        <div style="display: flex; flex-direction: column" id="wc--mainPage">
+            <progress id="load" class="wc--loader-main"></progress>
+            <div class="wc--navbar" id="mainBar">
+                <button class="wc--btn-main" id="close">
+                    <i data-feather="x" id="x" class="icon"></i>
+                    <i data-feather="arrow-left" class="hidden icon" id="send"></i>
+                </button>
+                <div style="position:relative; height:60px; flex:1; display:flex">
+                    <input
+                        id="input"
+                        type="text"
+                        class="wc--input-main"
+                        placeholder="Type a command..."
+                    />
+                    <p class="wc--ai-text hidden" id="aiText">Listening...</p>
+                </div>
+                <button class="wc--btn-main" id="mic">
+                    <i data-feather="mic" class="icon"></i>
+                </button>
+            </div>
+            
+            <ul id="resultsList" class="wc--results-list"></ul>
+        </div>
+        <script type="module" src="./renderer.js"></script>
+        <script>
+            feather.replace();
+        </script>
+    </body>
+</html>

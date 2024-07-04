@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>Document</title>
+</head>
+<body style="background-color: #666; margin:20px">
+    <div class="wc--list-group">
+        <label for="switch" class="wc--switch">        
+            <span class="wc--switch-label">
+                Toggle hello world
+                <small class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
+            </span>
+            <input type="checkbox" role="switch" id="switch" />
+        </label>
+        <div for="switch" class="wc--list-group-item">        
+            <span class="wc--list-group-item-label">
+                Hello world
+                <small class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
+            </span>
+            <button class="btn-icon wc--list-group-item-control">
+                <i data-feather="chevron-right" class="icon"></i>
+            </button>
+        </div>
+
+    </div>
+    <script>
+        feather.replace()
+    </script>
+</body>
+</html>
