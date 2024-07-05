@@ -114,39 +114,44 @@ function displayCommandMenu(query) {
 function displayRecentItems() {
     const resultsList = document.getElementById("resultsList");
     resultsList.innerHTML = "";
-    let recent = document.createElement("li");
-    recent.innerHTML =
-        "<span>Recent searches</span><button style='float:right' class='btn-borderless' onclick='localStorage.setItem(\"history\", \"[]\");location.reload();'>Clear</button> <button style='float:right' class='btn-borderless'>See more</button>";
-    recent.classList.add("wc--list-separator");
-    resultsList.appendChild(recent);
-    let index = 0;
-    console.log(JSON.parse(localStorage.getItem("history")));
-    JSON.parse(localStorage.getItem("history"))
-        .sort(function (x, y) {
-            return y.timestamp - x.timestamp;
-        })
-        .forEach((cmd) => {
-            if (index < 3) {
-                const deserializedCommand = new Command(
-                    cmd.query,
-                    cmd.item.displayName,
-                    () => {
-                        displayCommandMenu(cmd.query);
-                        input.value = cmd.query;
-                        input.dispatchEvent(new Event("input"));
-                    },
-                    "./assets/extensions/search.png",
-                    [],
-                    []
-                );
 
-                resultsList.appendChild(
-                    deserializedCommand.createMenuItem(cmd.query)
-                );
-                index += 1;
-            }
-        });
-    window.electronAPI.setSize(68 + index * 52 + 40);
+    if (JSON.parse(localStorage.getItem("history")).length > 0) {
+        let recent = document.createElement("li");
+        recent.innerHTML =
+            "<span>Recent searches</span><button style='float:right' class='btn-borderless' onclick='localStorage.setItem(\"history\", \"[]\");location.reload();'>Clear</button> <button style='float:right' class='btn-borderless'>See more</button>";
+        recent.classList.add("wc--list-separator");
+        resultsList.appendChild(recent);
+        let index = 0;
+        console.log(JSON.parse(localStorage.getItem("history")));
+        JSON.parse(localStorage.getItem("history"))
+            .sort(function (x, y) {
+                return y.timestamp - x.timestamp;
+            })
+            .forEach((cmd) => {
+                if (index < 3) {
+                    const deserializedCommand = new Command(
+                        cmd.query,
+                        cmd.item.displayName,
+                        () => {
+                            displayCommandMenu(cmd.query);
+                            input.value = cmd.query;
+                            input.dispatchEvent(new Event("input"));
+                        },
+                        "./assets/extensions/search.png",
+                        [],
+                        []
+                    );
+
+                    resultsList.appendChild(
+                        deserializedCommand.createMenuItem(cmd.query)
+                    );
+                    index += 1;
+                }
+            });
+        window.electronAPI.setSize(68 + index * 52 + 40);
+    } else {
+        window.electronAPI.setSize(60);
+    }
 }
 // Example input event listener
 const input = document.getElementById("input");
