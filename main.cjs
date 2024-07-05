@@ -26,6 +26,7 @@ const createWindow = () => {
         frame: false,
         vibrancy: 'fullscreen-ui',    // on MacOS
         backgroundMaterial: 'acrylic', // on Windows 11
+        skipTaskbar: true,
         icon: path.join(__dirname, "assets/logo/512x.png"),
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
