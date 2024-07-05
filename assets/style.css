@@ -14,6 +14,7 @@
     --font-mono: "DM Mono", "Consolas", monospace;
     --font-serif: "Wittgenstein", serif;
 }
+
 body {
     color: var(--primary);
     font-family: var(--font-stack);
@@ -55,23 +56,14 @@ a {
     );
     background-repeat: no-repeat;
     background-size: 300% 200%;
-    animation: rotateGrad 5s linear infinite;
+    animation: rotateGrad 5s linear infinite alternate;
 }
 @keyframes rotateGrad {
     0% {
         background-position: 0% 0%;
     }
-    25% {
-        background-position: 100% 0%;
-    }
     50% {
-        background-position: 100% 100%;
-    }
-    75% {
-        background-position: 0% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
+        background-position: 100% 0%;
     }
 }
 .wc--ai-text {
@@ -171,7 +163,7 @@ a {
 .icon.hidden {
     opacity: 0;
     filter: blur(5px);
-    transform: translate(-100%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(2);
     pointer-events: none;
 }
 .wc--results-list {
@@ -393,6 +385,32 @@ kbd {
     box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.08);
 }
 
+.wc--animation-pop{
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+	        animation: scale-up-center 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+}
+@-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     kbd {
@@ -418,6 +436,15 @@ mark {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.wc--switch:hover{
+    background: rgba(255, 255, 255, 0.05);
+}
+.wc--switch:active{
+    background: rgba(255, 255, 255, 0.15);
 }
 
 input:where([type="checkbox"][role="switch"]) {
@@ -480,12 +507,15 @@ input:where([type="checkbox"][role="switch"]):checked {
     user-select: none;
     text-overflow: ellipsis;
 }
+
 .wc--list-group{
-    background-color: var(--quartenary);
+    background-color: var(--onBG);
     display: flex;
     flex-direction: column;
     border-radius: 2rem;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
     font-size: 0.9rem;
+    overflow: hidden;
 }
 .text-muted {
     color: var(--tertiary);
@@ -498,7 +528,7 @@ input:where([type="checkbox"][role="switch"]):checked {
     padding: 20px;
 }
 
-.wc--list-group-item-label {
+.wc--list-group-item-label {
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -509,3 +539,4 @@ input:where([type="checkbox"][role="switch"]):checked {
 .wc--list-group-item-control {
     flex-shrink: 0;
 }
+
