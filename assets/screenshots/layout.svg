@@ -1,16 +1,16 @@
-<svg fill="none" viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     <foreignObject x="0" y="0" width="100%" height="100%">
         <div xmlns="http://www.w3.org/1999/xhtml" >
             <p align="center" style="display:grid;align-items: center;grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); grid-gap:1rem;">
                 <picture>
-                    <source srcset="./assets/screenshots/01@dark.png" media="(prefers-color-scheme: dark)" />
-                    <source srcset="./assets/screenshots/01.png" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
-                    <img alt="A floating search bar on an empty windows desktop." align="center" style="border-radius:2rem;" width="600px" src="./assets/screenshots/01.png">
+                    <source srcset="https://raw.githubusercontent.com/Ellicode/windCast/main/assets/screenshots/01@dark.png" media="(prefers-color-scheme: dark)" />
+                    <source srcset="https://raw.githubusercontent.com/Ellicode/windCast/main/assets/screenshots/01.png" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+                    <img alt="A floating search bar on an empty windows desktop." align="center" style="border-radius:2rem;" width="600px" src="https://raw.githubusercontent.com/Ellicode/windCast/main/assets/screenshots/01.png" />
                 </picture>
-                    <picture>
-                    <source srcset="./assets/screenshots/02@dark.png" media="(prefers-color-scheme: dark)" />
-                    <source srcset="./assets/screenshots/02.png" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
-                    <img alt="A floating search bar on an empty windows desktop." align="center" style="border-radius:2rem;" width="600px" src="./assets/screenshots/01.png">
+                <picture>
+                    <source srcset="https://raw.githubusercontent.com/Ellicode/windCast/main/assets/screenshots/02@dark.png" media="(prefers-color-scheme: dark)" />
+                    <source srcset="https://raw.githubusercontent.com/Ellicode/windCast/main/assets/screenshots/02.png" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+                    <img alt="A floating search bar on an empty windows desktop." align="center" style="border-radius:2rem;" width="600px" src="https://raw.githubusercontent.com/Ellicode/windCast/main/assets/screenshots/02.png" />
                 </picture>
             </p>
         </div>
